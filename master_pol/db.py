@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Date, Float
+from sqlalchemy import *
 from sqlalchemy.dialects.postgresql import MONEY
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
@@ -36,7 +36,7 @@ class Material_type(Base):
     __tablename__="material_type"
     id = Column(Integer, primary_key=True, autoincrement=True)
     type = Column(String(255))
-    percent_brak = Column(Integer)
+    percent_brak = Column(Float)
 
 class Product_type(Base):
     __tablename__="product_type"
